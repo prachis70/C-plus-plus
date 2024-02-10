@@ -12,54 +12,88 @@
 //(C) Minimum 3 Input Train Records
 #include<iostream>
 using namespace std;
-class Railway
-{	int Train_number,Train_time;string Train_name,Destination;static string source;	
-	public :		
-	void user()
+class Train
+{
+	int num,time,destination;static string name,source;
+     public:
+	 void details()
+	 {
+	 	cout<<"Enter the train num :";
+	 	cin>>num;
+	 	cout<<"Enter the train time :";
+	 	cin>>time;
+	 	cout<<"Enter the train destination :";
+		cin>>destination; 	
+     }
+     void display()
+     {
+     	cout<<name <<endl;
+     	cout<<source <<endl;
+     	cout<<"train numer is  :-> "<< num<<endl;
+     	cout<<"train time is   :-> "<<time <<endl;
+     	cout<<"train desti. is.:-> "<<destination <<endl;
+     	cout<<"................."
+	 }
+	 void search()
 	{
-		cout<<"Enter Train number  :-> ";
-		cin >> Train_number;	
-		cout <<"Enter Train time   :-> ";
-		cin >> Train_time;	
-		cin.ignore();
-		cout << "Enter Train name  :-> ";
-	    getline(cin,Train_name);  
-		cout << "Enter Destination :-> ";
-	    getline(cin,Destination);
+		cout <<"SearchingTrainNumber!!!"<<endl;
+		cin>>num;
+		cout <<"Train Source is :"<<source<<endl;
+		cout <<"Train Number is :"<<num<<endl;
+		cout <<"Train Name is :"<< name<<endl;
+        cout <<"Train Destination is :"<< destination<<endl;
+		cout <<"Train Time:"<<time<<":00"<<endl;
+		cout<<"..........................";
 	}
-	void Display()
+	 void all_rcrd()
 	{
-		cout << endl << "<<<<<>>>>>Reservation details<<<<<<>>>>>>"<< endl << endl;  
-		cout << "Train number     :-> " << Train_number << endl ;
-		cout << "Train time       :-> " << Train_time << ":00" <<endl ;
-		cout << "Train name       :-> " << Train_name << endl ;
-		cout << "Source           :-> " << source << endl ;
-		cout << "Destination      :-> " << Destination << endl<< endl ;
+		cout <<" -----------All Records ------------"<<endl;
+			cout <<"A. user input"<<endl;
+			cout <<"B. Display Records  :"<<endl;
+			cout <<"C. Search train Num : "<<endl;
+			cout <<"D.close details     : "<<endl;
+			cout <<"enter(A to D)       : "<<endl;
+			cout<<".................................";
+	        char like;
+	        cout<<"Enter the your like  :";
+	        cin>>like;
+		   if(like=='A')
+		    {
+	    	details();
+		    }
+		    else if(like=='B')
+		   {
+		    display();
+	     	}
+		   else if(like=='C')
+		   {
+		    search();
+		   }
+		    else if(like=='D')
+		   {
+		    cout<<"thank you visit again :"<<endl;
+	    	}
+		   else
+		  {
+			cout<<"Piease enter  capital A to Z";
+	   	}
 	}
-	void get()
-	{
-		cout << endl <<"Enter Train number : ";
-		cin >> Train_number;
-		cout << "Train number    :-> " << Train_number << endl ;
-		cout << "Train time      :-> " << Train_time << ":00" <<endl ;
-		cout << "Train name      :-> " << Train_name << endl ;
-		cout << "Source          :-> " << source << endl ;
-		cout << "Destination     :-> " << Destination << endl<< endl ;
-	}
-}; 
-string Railway::source="Surat";
+};
+//static
+string Train::name="superfast..";
+string Train::source="ahemdabaad..";
 int main()
-{	 
-	cout << "=================<>Railway Reservation System<>============= "<<endl<<endl; 
+{
+	Train t;
 	int n;
-	cout <<"please enter the any num : ";
-	cin >> n;	
-	Railway r1[n];	
-	for(int i=0; i<n ; i++)
+	cout<<"Enter the any number :";
+	cin>>n;
+	for(int i=0;i<n;i++)
 	{
-		r1[i].user();
-		r1[i].Display();
-		r1[i].get();
+		t.details();
+		t.all_rcrd();
 	}
-	return 0; 
+//	t.details();
+//	t.search();
+	return 0;
 }
