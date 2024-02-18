@@ -18,7 +18,7 @@ class Admin
 	Admin()
 	{
 		cout<<"..............COMPANY_NAME............"<<endl;
-		cout<<"..............ROYAL PALACE............"<<endl<<endl;
+		cout<<"..............SPINFLUENCE............"<<endl<<endl;
 	}
 	public:	
 	void print()
